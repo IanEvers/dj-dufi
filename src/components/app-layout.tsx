@@ -5,10 +5,9 @@ import { Home, Users, Settings, FileText } from 'lucide-react'
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { to: '/', label: 'Home', icon: Home },
-  { to: '/users', label: 'Users', icon: Users },
-  { to: '/settings', label: 'Settings', icon: Settings },
-  { to: '/forms', label: 'Forms', icon: FileText },
+  { to: '/', label: 'Mis DDJJ', icon: Home },
+  { to: '/seteoPuesto', label: 'Seteo Puesto', icon: Users },
+  { to: '/ddjj/new', label: 'Nueva DDJJ', icon: FileText },
 ]
 
 export function AppLayout({ children }) {

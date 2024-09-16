@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Layout } from './layout'
+
 import { MainContent } from './main-content'
 import { Sidebar } from './sidebar'
 import { NestedSidebar } from './nested-sidebar'
@@ -13,39 +13,36 @@ export function Forms() {
   const [activeNestedItem, setActiveNestedItem] = useState(null)
 
   const mainItems = [
-    { id: 'home', label: 'Home', icon: <Home className="w-5 h-5 mr-2" /> },
-    { id: 'users', label: 'Users', icon: <Users className="w-5 h-5 mr-2" /> },
-    { id: 'settings', label: 'Settings', icon: <Settings className="w-5 h-5 mr-2" /> },
+    { id: 'DatosPersonales', label: 'Datos personales y filiatorios', icon: <Home className="w-5 h-5 mr-2" />, complete: false },
+    { id: 'users', label: 'Situaciones Judiciales / Administrativas', icon: <Users className="w-5 h-5 mr-2" />, complete: false },
+    { id: 'settings', label: 'Formacion Profesional', icon: <Settings className="w-5 h-5 mr-2" />, complete: false },
+    { id: 'settings', label: 'Futuro inmediato', icon: <Settings className="w-5 h-5 mr-2" />, complete: false },
   ]
 
   const nestedItems = {
-    home: [
-      { id: 'dashboard', label: 'Dashboard' },
-      { id: 'analytics', label: 'Analytics' },
+    DatosPersonales: [
+      { id: 'contacto', label: 'Contacto', complete: false },
+      { id: 'domicilio', label: 'Domicilio', complete: false },
+      { id: 'vivienda', label: 'Vivienda', complete: false },
+      { id: 'familia', label: 'Familia', complete: false },
     ],
-    users: [
-      { id: 'list', label: 'User List' },
-      { id: 'roles', label: 'User Roles' },
-    ],
-    settings: [
-      { id: 'general', label: 'General Settings' },
-      { id: 'security', label: 'Security Settings' },
-    ],
+    
   }
 
   return (
-    <Layout>
+    <div className='p-2'>
       <Sidebar items={mainItems} onItemClick={setActiveMainItem} activeItem={activeMainItem} />
+      <hr />
       <MainContent>
         {activeMainItem && (
           <NestedSidebar
-            items={nestedItems[activeMainItem]}
-            onItemClick={setActiveNestedItem}
-            activeItem={activeNestedItem}
+          items={nestedItems[activeMainItem]}
+          onItemClick={setActiveNestedItem}
+          activeItem={activeNestedItem}
           />
         )}
-        {activeNestedItem && <AddressForm />}
+        {activeNestedItem == 'domicilio' && <AddressForm />}
       </MainContent>
-    </Layout>
+    </div>
   )
 }
