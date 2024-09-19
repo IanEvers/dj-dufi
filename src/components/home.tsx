@@ -8,12 +8,12 @@ export function Home() {
     <MainContent>
       <div>
         <h1 className='text-4xl font-bold mb-6 p-12 pb-0'>Mis DDJJ</h1>
-        <div className=' xl:w-[1200px] ml-12 my-12'>
+        <div className=' lg:w-[600px] xl:w-[60vw] ml-12 my-12'>
           <div className='flex justify-end'>
             <Link className='p-2 px-4  bg-black text-white text-center w-48 rounded-xl transition-all duration-200 border border-black hover:bg-white hover:text-black' to='/ddjj/new'>Nueva DDJJ</Link>
           </div>
         </div>
-        <table className="table-auto border-collapse border border-gray-200 xl:w-[1200px] ml-12  bg-white">
+        <table className="table-auto border-collapse border border-gray-200 lg:w-[600px] xl:w-[60vw] ml-12  bg-white">
           <thead className='py-3'>
             <tr>
               <th className='p-2 text-left'>Numero</th>
