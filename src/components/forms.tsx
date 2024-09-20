@@ -38,7 +38,7 @@ export function Forms() {
     FormacionProfesional: [
       { id: 'academica', label: 'Acádemica', complete: false },
       { id: 'militar', label: 'Militar', complete: false },
-      { id: 'Idioma', label: 'idioma', complete: false },
+      { id: 'idioma', label: 'Idioma', complete: false },
     ],
     FuturoInmediato: [
       { id: 'actual', label: 'Actual', complete: false },

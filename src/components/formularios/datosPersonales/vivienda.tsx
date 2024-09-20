@@ -9,8 +9,8 @@ import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function Component() {
-  const [hasHousing, setHasHousing] = useState(false)
-  const [isRenting, setIsRenting] = useState(false)
+  const [tieneCasa, setTieneCasa] = useState(false)
+  const [alquila, setAlquila] = useState(false)
 
   return (
     <Card className="w-full rounded-none mx-auto">
@@ -24,8 +24,8 @@ export default function Component() {
           </Label>
           <Switch
             id="has-housing"
-            checked={hasHousing}
-            onCheckedChange={setHasHousing}
+            checked={tieneCasa}
+            onCheckedChange={setTieneCasa}
           />
         </div>
 
@@ -44,7 +44,7 @@ export default function Component() {
           </Select>
         </div>
 
-        {hasHousing && (
+        {tieneCasa && (
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Dirección de la vivienda propia</h3>
             <div className="grid grid-cols-3 gap-4">
@@ -116,12 +116,12 @@ export default function Component() {
           </Label>
           <Switch
             id="is-renting"
-            checked={isRenting}
-            onCheckedChange={setIsRenting}
+            checked={alquila}
+            onCheckedChange={setAlquila}
           />
         </div>
 
-        {isRenting && (
+        {alquila && (
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="desde">Desde</Label>

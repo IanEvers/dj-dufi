@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 export default function Component() {
-  const [showNewMemberForm, setShowNewMemberForm] = useState(false)
+  const [mostrarFormularioNuevo, setMostrarFormularioNuevo] = useState(false)
   const [civilStatus, setCivilStatus] = useState("casado/a")
 
   const familyMembers = [
@@ -37,11 +37,11 @@ export default function Component() {
               <SelectItem value="viudo/a">Viudo/a</SelectItem>
             </SelectContent>
           </Select>
-          <Button onClick={() => setShowNewMemberForm(true)}>Nuevo integrante</Button>
+          <Button onClick={() => setMostrarFormularioNuevo(true)}>Nuevo integrante</Button>
         </div>
       </CardHeader>
       <CardContent>
-        {!showNewMemberForm ? (
+        {!mostrarFormularioNuevo ? (
           familyMembers.map((section, index) => (
             <div key={index} className="mb-8">
               <h3 className="text-xl font-semibold mb-4">{section.type}</h3>
@@ -178,7 +178,7 @@ export default function Component() {
               <Textarea id="observaciones" placeholder="Agregue observaciones adicionales" />
             </div>
             <div className="flex justify-end space-x-4">
-              <Button variant="outline" onClick={() => setShowNewMemberForm(false)}>Cancelar</Button>
+              <Button variant="outline" onClick={() => setMostrarFormularioNuevo(false)}>Cancelar</Button>
               <Button type="submit">Guardar</Button>
             </div>
           </form>
